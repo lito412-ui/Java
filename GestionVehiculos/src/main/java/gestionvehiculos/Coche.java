@@ -1,6 +1,5 @@
 package gestionvehiculos;
 
-import java.util.UUID;
 
 class Coche extends Vehiculo {
 

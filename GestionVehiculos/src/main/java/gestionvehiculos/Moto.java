@@ -4,7 +4,6 @@
  */
 package gestionvehiculos;
 
-import java.util.UUID;
 
 /**
  *
