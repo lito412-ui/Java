@@ -14,8 +14,9 @@ import java.util.Scanner;
  */
 public class VehiculoCRUD {
 
-    public static void agregarVehiculo(List<Coche> coches, List<Moto> motos) {
+    public static ArrayList agregarVehiculo(Vehiculo v) {
         boolean verificar = false;
+        ArrayList<Vehiculo> vehiculos = new ArrayList<>();
         do {
             String marca;
             boolean tieneSidecar = false;
@@ -38,7 +39,7 @@ public class VehiculoCRUD {
                     año = leer.nextInt();
                     System.out.println("PUERTAS: ");
                     puertas = leer.nextInt();
-                    coches.add(new Coche(marca, modelo, año, puertas));
+                    vehiculos.add(new Coche(marca, modelo, año, puertas));
                     verificar = true;
                 } else if (texto.equals("MOTO")) {
                     System.out.println("MARCA: ");
@@ -55,31 +56,37 @@ public class VehiculoCRUD {
                         tieneSidecar = false;
                     }
 
-                    motos.add(new Moto(marca, modelo, año, tieneSidecar));
+                    vehiculos.add(new Moto(marca, modelo, año, tieneSidecar));
                     verificar = true;
                 }
             } else {
                 System.out.println("Por favor, introduzca solo texto");
             }
         } while (!verificar);
+        return vehiculos;
     }
 
-    public static void listarVehiculos() {
-        List<Coche> coches = new ArrayList<>();
-        List<Moto> motos = new ArrayList<>();
-        for (int i = 0; i < coches.size(); i++) {
-            System.out.println("Marca: " + coches.get(i).getMarca());
-            System.out.println("Modelo: " + coches.get(i).getModelo());
-            System.out.println("Año: " + coches.get(i).getAño());
-            System.out.println("Puertas: " + coches.get(i).getPuertas());
-            System.out.println("ID: " + coches.get(i).getId());
+    public static ArrayList listarVehiculos(ArrayList<Vehiculo> vehiculos) {
+        System.out.println("\nCoches");
+        for (Vehiculo v : vehiculos) {
+            if (v instanceof Coche) {
+                System.out.println("Marca: " + v.getMarca());
+                System.out.println("Modelo: " + v.getModelo());
+                System.out.println("Año: " + v.getAño());
+                System.out.println("Puertas: " + ((Coche) v).getPuertas());
+                System.out.println("ID: " + v.getId());
+            }
         }
-        for (int j = 0; j < motos.size(); j++) {
-            System.out.println("Marca: " + motos.get(j).getMarca());
-            System.out.println("Modelo: " + motos.get(j).getModelo());
-            System.out.println("Año: " + motos.get(j).getAño());
-            System.out.println("Sidecar: " + motos.get(j).getTieneSidecar());
-            System.out.println("ID: " + motos.get(j).getId());
+        System.out.println("\nMotos");
+        for (Vehiculo v : vehiculos){
+            if (v instanceof Moto){
+                System.out.println("Marca: " + v.getMarca());
+                System.out.println("Modelo: " + v.getModelo());
+                System.out.println("Año: " + v.getAño());
+                System.out.println("Sidecar: " + ((Moto) v).getTieneSidecar());
+                System.out.println("ID: " + v.getId());
+            }
         }
+        return vehiculos;
     }
 }
