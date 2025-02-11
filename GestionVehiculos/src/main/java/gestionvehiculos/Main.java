@@ -7,6 +7,7 @@ package gestionvehiculos;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.util.UUID;
 
 /**
  *
@@ -25,6 +26,7 @@ public class Main {
         boolean salir = false;
         int menu = 0;
         do {
+            System.out.println();
             System.out.println("Elija una opción");
             System.out.println("1. Agregar un vehiculo.");
             System.out.println("2. Listar todos los vehículos.");
@@ -35,17 +37,38 @@ public class Main {
 
             switch (menu) {
                 case 1:
-                    veh = VehiculoCRUD.agregarVehiculo(v);
+                    VehiculoCRUD.agregarVehiculo();
                     break;
                 case 2:
-                    VehiculoCRUD.listarVehiculos(veh);
+                    VehiculoCRUD.listarVehiculos();
                     break;
                 case 3:
+                    eliminarVehiculo();
+                    break;
+                case 4:
+                    break;
+                case 5:
                     System.out.println("SALIENDO ...... ");
                     salir = true;
+                    break;
+                default:
+                   System.out.println("A ver si aprendemos a leer, intentalo de nuevo"); 
             }
         } while (!salir);
 
+    }
+    private static void eliminarVehiculo() {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Introduce el ID del vehículo a eliminar: ");
+        String idTexto = scanner.nextLine();
+
+        try {
+            UUID id = UUID.fromString(idTexto);
+            VehiculoCRUD.eliminarVehiculo(id);
+        } catch (IllegalArgumentException e) {
+            System.out.println("Error: ID no válido.");
+        }
     }
 
 }

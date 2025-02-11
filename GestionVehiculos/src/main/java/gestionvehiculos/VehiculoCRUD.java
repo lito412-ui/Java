@@ -6,6 +6,8 @@ package gestionvehiculos;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Iterator;
+import java.util.UUID;
 import java.util.Scanner;
 
 /**
@@ -14,9 +16,10 @@ import java.util.Scanner;
  */
 public class VehiculoCRUD {
 
-    public static ArrayList agregarVehiculo(Vehiculo v) {
+    private static ArrayList<Vehiculo> vehiculos = new ArrayList<>();
+
+    public static void agregarVehiculo() {
         boolean verificar = false;
-        ArrayList<Vehiculo> vehiculos = new ArrayList<>();
         do {
             String marca;
             boolean tieneSidecar = false;
@@ -63,30 +66,50 @@ public class VehiculoCRUD {
                 System.out.println("Por favor, introduzca solo texto");
             }
         } while (!verificar);
-        return vehiculos;
+
     }
 
-    public static ArrayList listarVehiculos(ArrayList<Vehiculo> vehiculos) {
-        System.out.println("\nCoches");
-        for (Vehiculo v : vehiculos) {
-            if (v instanceof Coche) {
-                System.out.println("Marca: " + v.getMarca());
-                System.out.println("Modelo: " + v.getModelo());
-                System.out.println("Año: " + v.getAño());
-                System.out.println("Puertas: " + ((Coche) v).getPuertas());
-                System.out.println("ID: " + v.getId());
+    public static void listarVehiculos() {
+        if (vehiculos.isEmpty()) {
+            System.out.println("No hay vehiculos registrados");
+        } else {
+            System.out.println("\nCoches");
+            for (Vehiculo v : vehiculos) {
+                if (v instanceof Coche) {
+                    System.out.println("Marca: " + v.getMarca());
+                    System.out.println("Modelo: " + v.getModelo());
+                    System.out.println("Año: " + v.getAño());
+                    System.out.println("Puertas: " + ((Coche) v).getPuertas());
+                    System.out.println("ID: " + v.getId());
+                    System.out.println();
+                }
+            }
+            System.out.println("\nMotos");
+            for (Vehiculo v : vehiculos) {
+                if (v instanceof Moto) {
+                    System.out.println("Marca: " + v.getMarca());
+                    System.out.println("Modelo: " + v.getModelo());
+                    System.out.println("Año: " + v.getAño());
+                    System.out.println("Sidecar: " + ((Moto) v).getTieneSidecar());
+                    System.out.println("ID: " + v.getId());
+                    System.out.println();
+                }
             }
         }
-        System.out.println("\nMotos");
-        for (Vehiculo v : vehiculos){
-            if (v instanceof Moto){
-                System.out.println("Marca: " + v.getMarca());
-                System.out.println("Modelo: " + v.getModelo());
-                System.out.println("Año: " + v.getAño());
-                System.out.println("Sidecar: " + ((Moto) v).getTieneSidecar());
-                System.out.println("ID: " + v.getId());
+    }
+    public static boolean eliminarVehiculo(UUID id) {
+        Iterator<Vehiculo> iterator = vehiculos.iterator();
+        
+        while (iterator.hasNext()) {
+            Vehiculo v = iterator.next();
+            if (v.getId().equals(id)) {
+                iterator.remove();
+                System.out.println("Vehiculo con ID: " + id + " eliminado correctamente");
+                return true;
             }
         }
-        return vehiculos;
+
+        System.out.println("No se encontro un vehiculo con esa ID.");
+        return false;
     }
 }
