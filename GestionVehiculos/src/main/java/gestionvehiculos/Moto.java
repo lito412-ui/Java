@@ -29,7 +29,11 @@ class Moto extends Vehiculo {
 
     @Override
     void mostrarInfo() {
-
+        System.out.println("Marca: " + this.marca);
+        System.out.println("Modelo: " + this.modelo);
+        System.out.println("Año : " + this.año);
+        System.out.println("Sidecar : " + this.tieneSidecar);
+        System.out.println("ID: " + this.id);
     }
 
 }

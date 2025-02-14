@@ -12,10 +12,10 @@ import java.util.UUID;
  */
 abstract class Vehiculo {
 
-    private UUID id;
+    public UUID id;
     String marca;
-    private String modelo;
-    private int año;
+    public String modelo;
+    public int año;
 
     public Vehiculo(String marca, String modelo, int año) {
         this.marca = marca;

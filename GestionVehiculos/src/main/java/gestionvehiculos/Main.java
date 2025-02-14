@@ -4,8 +4,6 @@
  */
 package gestionvehiculos;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 import java.util.UUID;
 
@@ -19,9 +17,8 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Vehiculo v = null;
+
         Scanner leer = new Scanner(System.in);
-        ArrayList<Vehiculo> veh = new ArrayList<>();
 
         boolean salir = false;
         int menu = 0;
@@ -32,8 +29,15 @@ public class Main {
             System.out.println("2. Listar todos los vehículos.");
             System.out.println("3. Eliminar un vehículo por ID.");
             System.out.println("4. Filtrar vehículos por tipo (Coche/Moto).");
-            System.out.println("5. Salir del programa.");
-            menu = leer.nextInt();
+            System.out.println("5. Guardar Vehiculos en .TXT.");
+            System.out.println("6. Cargar Vehiculos.");
+            System.out.println("7. Salir del programa.");
+            if (leer.hasNextInt()) {
+                menu = leer.nextInt();
+            } else {
+                System.out.println("Escribe solo números");
+                leer.next();
+            }
 
             switch (menu) {
                 case 1:
@@ -46,17 +50,26 @@ public class Main {
                     eliminarVehiculo();
                     break;
                 case 4:
+                    VehiculoCRUD.listarPorTipo();
                     break;
+
                 case 5:
+                    VehiculoCRUD.guardarVehiculos();
+                    break;
+                case 6:
+                    VehiculoCRUD.cargarVehiculos();
+                    break;
+                case 7:
                     System.out.println("SALIENDO ...... ");
                     salir = true;
                     break;
                 default:
-                   System.out.println("A ver si aprendemos a leer, intentalo de nuevo"); 
+                    System.out.println("A ver si aprendemos a leer, intentalo de nuevo");
             }
         } while (!salir);
 
     }
+
     private static void eliminarVehiculo() {
         Scanner scanner = new Scanner(System.in);
 

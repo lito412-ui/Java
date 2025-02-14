@@ -4,8 +4,12 @@
  */
 package gestionvehiculos;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Iterator;
 import java.util.UUID;
 import java.util.Scanner;
@@ -97,9 +101,10 @@ public class VehiculoCRUD {
             }
         }
     }
+
     public static boolean eliminarVehiculo(UUID id) {
         Iterator<Vehiculo> iterator = vehiculos.iterator();
-        
+
         while (iterator.hasNext()) {
             Vehiculo v = iterator.next();
             if (v.getId().equals(id)) {
@@ -111,5 +116,79 @@ public class VehiculoCRUD {
 
         System.out.println("No se encontro un vehiculo con esa ID.");
         return false;
+    }
+
+    public static void listarPorTipo() {
+        boolean verificar = false;
+        Scanner leer = new Scanner(System.in);
+        String texto;
+        do {
+
+            System.out.println("Que tipo de vehiculos quieres listar -------- COCHE O MOTO");
+            if (leer.hasNextLine()) {
+                texto = leer.nextLine().toUpperCase();
+                if (texto.equals("COCHE")) {
+                    System.out.println("\nCoches");
+                    for (Vehiculo v : vehiculos) {
+                        if (v instanceof Coche) {
+                            System.out.println("Marca: " + v.getMarca());
+                            System.out.println("Modelo: " + v.getModelo());
+                            System.out.println("Año: " + v.getAño());
+                            System.out.println("Puertas: " + ((Coche) v).getPuertas());
+                            System.out.println("ID: " + v.getId());
+                            System.out.println();
+                            verificar = true;
+                        }
+                    }
+                } else if (texto.equals("MOTO")) {
+                    System.out.println("\nMotos");
+                    for (Vehiculo v : vehiculos) {
+                        if (v instanceof Moto) {
+                            System.out.println("Marca: " + v.getMarca());
+                            System.out.println("Modelo: " + v.getModelo());
+                            System.out.println("Año: " + v.getAño());
+                            System.out.println("Sidecar: " + ((Moto) v).getTieneSidecar());
+                            System.out.println("ID: " + v.getId());
+                            System.out.println();
+                            verificar = true;
+                        }
+                    }
+                }
+            } else {
+                System.out.println("Escribe solo letras; coche o moto");
+            }
+        } while (!verificar);
+
+    }
+
+    public static void guardarVehiculos() {
+        File archivo = new File("vehiculos.txt");
+        try {
+            FileWriter escritor = new FileWriter(archivo);
+            for (Vehiculo v : vehiculos) {
+                if (v instanceof Coche) {
+                    escritor.write("COCHE----> " + "Marca: " + v.getMarca() + "\t" + "Modelo: " + v.getModelo() + "\t" + "Año: " + v.getAño() + "\t" + "Puertas: " + ((Coche) v).getPuertas() + "\t" + "ID: " + v.getId() + "\t");
+                    escritor.write("\n");
+                } else if (v instanceof Moto) {
+                    escritor.write("MOTO-----> " + "Marca: " + v.getMarca() + "\t" + "Modelo: " + v.getModelo() + "\t" + "Año: " + v.getAño() + "\t" + "Tiene Sidecar: " + ((Moto) v).getTieneSidecar() + "\t" + "ID: " + v.getId() + "\t");
+                    escritor.write("\n");
+                }
+            }
+            escritor.close();
+        } catch (IOException e) {
+            System.out.println("Error al escribir en el archivo" + e.getMessage());
+        }
+    }
+
+    public static void cargarVehiculos() {
+        File archivo = new File("vehiculos.txt");
+        try {
+            Scanner leer = new Scanner(archivo);
+            while (leer.hasNextLine()) {
+                System.out.println(leer.nextLine());
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 }
