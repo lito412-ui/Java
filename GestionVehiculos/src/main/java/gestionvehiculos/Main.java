@@ -29,9 +29,11 @@ public class Main {
             System.out.println("2. Listar todos los vehículos.");
             System.out.println("3. Eliminar un vehículo por ID.");
             System.out.println("4. Filtrar vehículos por tipo (Coche/Moto).");
-            System.out.println("5. Guardar Vehiculos en .TXT.");
-            System.out.println("6. Cargar Vehiculos.");
-            System.out.println("7. Salir del programa.");
+            System.out.println("5. Modificar Vehiculo");
+            System.out.println("6. Ordenar Por Año de Fabricación");
+            System.out.println("7. Guardar Vehiculos");
+            System.out.println("8. Cargar Vehiculos.");
+            System.out.println("9. Salir del programa.");
             if (leer.hasNextInt()) {
                 menu = leer.nextInt();
             } else {
@@ -52,14 +54,19 @@ public class Main {
                 case 4:
                     VehiculoCRUD.listarPorTipo();
                     break;
-
                 case 5:
-                    VehiculoCRUD.guardarVehiculos();
+                    VehiculoCRUD.modificarVehiculo();
                     break;
                 case 6:
-                    VehiculoCRUD.cargarVehiculos();
+                    VehiculoCRUD.ordenarPorAño();
                     break;
                 case 7:
+                    VehiculoCRUD.guardarVehiculos();
+                    break;
+                case 8:
+                    VehiculoCRUD.cargarVehiculos();
+                    break;
+                case 9:
                     System.out.println("SALIENDO ...... ");
                     salir = true;
                     break;
