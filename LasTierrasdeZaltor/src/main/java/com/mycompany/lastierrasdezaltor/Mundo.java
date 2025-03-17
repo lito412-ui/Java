@@ -3,7 +3,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.mycompany.lastierrasdezaltor;
+
 import java.util.Scanner;
+
 /**
  *
  * @author Alumno
@@ -25,12 +27,12 @@ public class Mundo {
     }
 
     public static void iniciarCombate(Personaje Jugador, Enemigo enemigo) {
-   
-            if(Jugador.velocidad > enemigo.velocidad){
-               Juego.realizarAccion(Jugador,enemigo);
-            }else{
-                Juego.realizarAccion(enemigo, Jugador);
-            }
-        
+
+        if (Jugador.velocidad > enemigo.velocidad) {
+            Juego.realizarAccion(Jugador, enemigo);
+        } else {
+            Juego.realizarAccion(enemigo, Jugador);
+        }
+
     }
 }

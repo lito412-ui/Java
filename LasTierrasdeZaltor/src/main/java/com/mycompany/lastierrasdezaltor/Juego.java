@@ -11,15 +11,17 @@ import java.util.Scanner;
  * @author Alumno
  */
 public class Juego {
-    
+
     public static void main(String[] args) {
+        Personaje jug1 = new Personaje(100, 15, 8, 15, "Ataque sigiloso (+5 de daño)");
+        Personaje jug2 = new Personaje(120, 12, 10, 10, "Curación mística (+20 vida)");
+        Personaje jug3 = new Personaje(150, 18, 12, 6, "Golpe devastador (doble daño)");
+        mostrarEstadistica(jug1, jug2, jug3);
         Personaje jugador = seleccionarClase();
-        System.out.println(jugador.vida);
         Enemigo enemigo = Mundo.generarEnemigoAleatorio();
-        System.out.println(enemigo.vida);
         Mundo.iniciarCombate(jugador, enemigo);
     }
-    
+
     public static void realizarAccion(Personaje jugador, Personaje enemigo) {
         int accion;
         Scanner leer = new Scanner(System.in);
@@ -81,7 +83,7 @@ public class Juego {
                     break;
 
                 case "GUERRERO":
-                    jugador = new Guerrero(150,18,12,6,"Golpe devastador (doble daño)");
+                    jugador = new Guerrero(150, 18, 12, 6, "Golpe devastador (doble daño)");
                     salir = true;
                     break;
                 default:
@@ -89,5 +91,30 @@ public class Juego {
             }
         } while (!salir);
         return jugador;
+    }
+
+    public static void mostrarEstadistica(Personaje jugador, Personaje jugador1, Personaje jugador2) {
+        System.out.println("XX--NINJA--XX");
+        System.out.println("Vida: " + jugador.vida);
+        System.out.println("Ataque: " + jugador.ataque);
+        System.out.println("Defensa : " + jugador.defensa);
+        System.out.println("Velocidad: " + jugador.velocidad);
+        System.out.println("Habilidad Especial: " + jugador.habilidad_especial);
+        System.out.println();
+        System.out.println("||``CHAMAN´´||");
+        System.out.println("Vida: " + jugador1.vida);
+        System.out.println("Ataque: " + jugador1.ataque);
+        System.out.println("Defensa : " + jugador1.defensa);
+        System.out.println("Velocidad: " + jugador1.velocidad);
+        System.out.println("Habilidad Especial: " + jugador1.habilidad_especial);
+        System.out.println();
+        System.out.println("//~~GUERRERO~~\\");
+        System.out.println("Vida: " + jugador2.vida);
+        System.out.println("Ataque: " + jugador2.ataque);
+        System.out.println("Defensa : " + jugador2.defensa);
+        System.out.println("Velocidad: " + jugador2.velocidad);
+        System.out.println("Habilidad Especial: " + jugador2.habilidad_especial);
+        System.out.println();
+
     }
 }
