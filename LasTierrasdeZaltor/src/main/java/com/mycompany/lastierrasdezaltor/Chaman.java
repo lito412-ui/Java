@@ -10,11 +10,12 @@ package com.mycompany.lastierrasdezaltor;
  */
 class Chaman extends Personaje {
 
-    public Chaman(int vida, int ataque, int defensa, int velocidad, String habilidad_especial) {
-        super(vida, ataque, defensa, velocidad, habilidad_especial);
+    public Chaman(String nombre) {
+        super(120, 12, 10, 10, nombre);
     }
 
     public void curar() {
-        vida = vida + 20;
+        System.out.println(nombre + " usa Curación! Recupera 20 de vida.");
+        vida += 20;
     }
 }

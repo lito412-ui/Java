@@ -10,16 +10,13 @@ package com.mycompany.lastierrasdezaltor;
  */
 class Guerrero extends Personaje {
 
-    public int golpeDevastador;
-
-    public Guerrero(int vida, int ataque, int defensa, int velocidad, String habilidad_especial) {
-        super(vida, ataque, defensa, velocidad, habilidad_especial);
-        golpeDevastador = ataque;
+    public Guerrero(String nombre) {
+        super(150, 18, 12, 6, nombre);
 
     }
 
     public void golpeDevastador(Enemigo enemigo) {
-        golpeDevastador = golpeDevastador * 2;
-        enemigo.vida = enemigo.vida - golpeDevastador;
+        System.out.println(nombre + " usa Golpe Devastador!");
+        enemigo.recibirDaño(ataque * 2);
     }
 }

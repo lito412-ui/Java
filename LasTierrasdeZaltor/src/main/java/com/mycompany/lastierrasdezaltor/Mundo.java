@@ -4,6 +4,7 @@
  */
 package com.mycompany.lastierrasdezaltor;
 
+import java.util.Random;
 import java.util.Scanner;
 
 /**
@@ -12,27 +13,43 @@ import java.util.Scanner;
  */
 public class Mundo {
 
-    public static Enemigo generarEnemigoAleatorio() {
-        int enemigo = (int) (Math.random() * 3) + 1;
-        switch (enemigo) {
-            case 1:
-                return new LoboSalvaje(80, 12, 5, 12, "Mordida rápida (+2 ataque)", 30);
-            case 2:
-                return new GuerreroOscuro(130, 20, 10, 4, "Furia maldita (+5 ataque)", 50);
-            case 3:
-                return new NoMuerto(100, 15, 8, 9, "Regeneración (cura 10 vida por turno)", 40);
-            default:
-                return null;
-        }
+    private static Scanner leer = new Scanner(System.in);
+    private static Random random = new Random();
+
+    static Enemigo generarEnemigoAleatorio() {
+        int opcion = random.nextInt(3);
+        return switch (opcion) {
+            case 0 ->
+                new LoboSalvaje();
+            case 1 ->
+                new GuerreroOscuro();
+            default ->
+                new NoMuerto();
+        };
     }
 
-    public static void iniciarCombate(Personaje Jugador, Enemigo enemigo) {
+    /**
+     *
+     * @param jugador
+     * @param enemigo
+     */
+    static void iniciarCombate(Personaje jugador, Enemigo enemigo) {
+        while (jugador.estaVivo() && enemigo.estaVivo()) {
+            System.out.println("¿Qué quieres hacer? 1. Atacar |||| 2. Defender");
+            int opcion = leer.nextInt();
 
-        if (Jugador.velocidad > enemigo.velocidad) {
-            Juego.realizarAccion(Jugador, enemigo);
-        } else {
-            Juego.realizarAccion(enemigo, Jugador);
+            if (opcion == 1) {
+                jugador.atacar(enemigo);
+            } else if (opcion == 2) {
+                System.out.println(jugador.getNombre() + " se defiende y reduce el daño.");
+                jugador.defender();
+            }
+
+            if (enemigo.estaVivo()) {
+                int danioRecibido = Math.max(enemigo.ataque - jugador.defensa, 1);
+                jugador.recibirDaño(danioRecibido);
+                System.out.println(jugador.getNombre() + " ha recibido " + danioRecibido + " de daño. Vida restante: " + jugador.vida);
+            }
         }
-
     }
 }

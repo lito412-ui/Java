@@ -10,20 +10,11 @@ package com.mycompany.lastierrasdezaltor;
  */
 class GuerreroOscuro extends Enemigo {
 
-    public int ataqueEspecial;
-
-    public GuerreroOscuro(int vida, int ataque, int defensa, int velocidad, String habilidad_especial, int exp) {
-        super(vida, ataque, defensa, velocidad, habilidad_especial, exp);
+    public GuerreroOscuro() {
+        super("Guerrero Oscuro", 130, 20, 10, 8);
     }
-
     @Override
-    public void ataqueEspecial() {
-        furiaMaldita();
-    }
-
-    void furiaMaldita() {
-        Personaje aliado = null;
-        ataqueEspecial = ataque + 5;
-        aliado.vida = aliado.vida - ataqueEspecial;
-    }
-}
+    public void ataqueEspecial(Personaje jugador) {
+        System.out.println(nombre + " usa Furia Maldita!");
+        jugador.recibirDaño(ataque + 5);
+    }}

@@ -12,109 +12,48 @@ import java.util.Scanner;
  */
 public class Juego {
 
+    private static Scanner leer = new Scanner(System.in);
+
     public static void main(String[] args) {
-        Personaje jug1 = new Personaje(100, 15, 8, 15, "Ataque sigiloso (+5 de daño)");
-        Personaje jug2 = new Personaje(120, 12, 10, 10, "Curación mística (+20 vida)");
-        Personaje jug3 = new Personaje(150, 18, 12, 6, "Golpe devastador (doble daño)");
-        mostrarEstadistica(jug1, jug2, jug3);
-        Personaje jugador = seleccionarClase();
-        Enemigo enemigo = Mundo.generarEnemigoAleatorio();
-        Mundo.iniciarCombate(jugador, enemigo);
-    }
+        System.out.println("Bienvenido a Zaltor. Elige tu clase: 1. Guerrero ||| 2. Ninja ||| 3. Chamán");
+        int opcion = leer.nextInt();
+        leer.nextLine();
+        System.out.println("Introduce tu nombre: ");
+        String nombre = leer.nextLine();
 
-    public static void realizarAccion(Personaje jugador, Personaje enemigo) {
-        int accion;
-        Scanner leer = new Scanner(System.in);
-        boolean salir = false;
-        do {
-            System.out.println("Acciones posibles");
-            System.out.println("1- Atacar");
-            System.out.println("2- Defender");
-            System.out.println("3- Habilidad especial");
-            System.out.println("4- Huir");
-            accion = leer.nextInt();
-            switch (accion) {
-                case 1:
-                    jugador.atacar(enemigo);
-                    break;
-                case 2:
-                    jugador.vida = jugador.vida - (enemigo.ataque - jugador.defensa);
-                    break;
-                case 3:
+        Personaje jugador;
+        switch (opcion) {
+            case 1:
+                jugador = new Guerrero(nombre);
+                break;
+            case 2:
+                jugador = new Ninja(nombre);
+                break;
+            default:
+                jugador = new Chaman(nombre);
+                break;
+        }
 
-                    break;
+        System.out.println("¡¡" + jugador.nombre + " ha comenzado su aventura!!");
 
-                case 4:
-                    int huir = (int) (Math.random() * 5) + 1;
-                    System.out.println("Intentando huir....");
-                    if (huir == 2) {
-                        salir = true;
-                    } else {
-                        System.out.println("No has podido huir, te has visto atraido por el alma del enemigo");
-                    }
-                    break;
-
-                default:
-                    System.out.println("Intentalo de nuevo");
+        while (jugador.nivel < 5) {
+            Enemigo enemigo = Mundo.generarEnemigoAleatorio();
+            System.out.println("¡Un " + enemigo.nombre + " aparece!");
+            Mundo.iniciarCombate(jugador, enemigo);
+            if (!jugador.estaVivo()) {
+                System.out.println("Has sido derrotado. Fin del juego.");
+                return;
             }
-        } while (jugador.vida <= 0 || enemigo.vida <= 0 || !salir);
-    }
+        }
 
-    public static Personaje seleccionarClase() {
-        Personaje jugador = null;
-        boolean salir = false;
-        Scanner leer = new Scanner(System.in);
-        String opcion;
-        do {
-            System.out.println("Elige tu Personaje");
-            System.out.println("-Ninja");
-            System.out.println("-Chaman");
-            System.out.println("-Guerrero");
-            opcion = leer.nextLine().toUpperCase();
-            switch (opcion) {
-                case "NINJA":
-                    jugador = new Ninja(100, 15, 8, 15, "Ataque sigiloso (+5 de daño)");
-                    salir = true;
-                    break;
+        System.out.println("¡Has alcanzado el nivel 5! Es hora de enfrentar a Malenia, la Espada de Miquella.");
+        JefeFinal jefe_final = new JefeFinal();
+        Mundo.iniciarCombate(jugador, jefe_final);
 
-                case "CHAMAN":
-                    jugador = new Chaman(120, 12, 10, 10, "Curación mística (+20 vida)");
-                    salir = true;
-                    break;
-
-                case "GUERRERO":
-                    jugador = new Guerrero(150, 18, 12, 6, "Golpe devastador (doble daño)");
-                    salir = true;
-                    break;
-                default:
-                    System.out.println("Error.....Personaje no valido");
-            }
-        } while (!salir);
-        return jugador;
-    }
-
-    public static void mostrarEstadistica(Personaje jugador, Personaje jugador1, Personaje jugador2) {
-        System.out.println("XX--NINJA--XX");
-        System.out.println("Vida: " + jugador.vida);
-        System.out.println("Ataque: " + jugador.ataque);
-        System.out.println("Defensa : " + jugador.defensa);
-        System.out.println("Velocidad: " + jugador.velocidad);
-        System.out.println("Habilidad Especial: " + jugador.habilidad_especial);
-        System.out.println();
-        System.out.println("||``CHAMAN´´||");
-        System.out.println("Vida: " + jugador1.vida);
-        System.out.println("Ataque: " + jugador1.ataque);
-        System.out.println("Defensa : " + jugador1.defensa);
-        System.out.println("Velocidad: " + jugador1.velocidad);
-        System.out.println("Habilidad Especial: " + jugador1.habilidad_especial);
-        System.out.println();
-        System.out.println("//~~GUERRERO~~\\");
-        System.out.println("Vida: " + jugador2.vida);
-        System.out.println("Ataque: " + jugador2.ataque);
-        System.out.println("Defensa : " + jugador2.defensa);
-        System.out.println("Velocidad: " + jugador2.velocidad);
-        System.out.println("Habilidad Especial: " + jugador2.habilidad_especial);
-        System.out.println();
-
+        if (jugador.estaVivo()) {
+            System.out.println("¡Has derrotado a Malenia y restaurado la paz en Zaltor! Eres un héroe legendario.");
+        } else {
+            System.out.println("Malenia&& ha vencido. Zaltor sigue en la oscuridad...");
+        }
     }
 }

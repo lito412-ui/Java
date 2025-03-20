@@ -10,15 +10,12 @@ package com.mycompany.lastierrasdezaltor;
  */
 class NoMuerto extends Enemigo {
 
-    public NoMuerto(int vida, int ataque, int defensa, int velocidad, String habilidad_especial, int exp) {
-        super(vida, ataque, defensa, velocidad, habilidad_especial, exp);
+   public NoMuerto() {
+        super("No_Muerto", 100, 15, 8, 5);
     }
-
-    @Override
-    public void ataqueEspecial() {
-        regeneracion();
-    }
-    void regeneracion(){
-    vida = vida +10;
+   @Override
+    public void ataqueEspecial(Personaje jugador) {
+        System.out.println(nombre + " usa Regeneración y recupera 10 de vida!");
+        vida += 10;
     }
 }

@@ -4,27 +4,34 @@
  */
 package com.mycompany.lastierrasdezaltor;
 
+import java.util.Random;
+
 /**
  *
  * @author Alumno
  */
 public class Personaje {
 
+    public String nombre;
     public int vida;
     public int ataque;
     public int defensa;
     public int velocidad;
     public String habilidad_especial;
+    public int nivel;
+    public int experiencia;
 
     /*
     Constructor
      */
-    public Personaje(int vida, int ataque, int defensa, int velocidad, String habilidad_especial) {
+    public Personaje(int vida, int ataque, int defensa, int velocidad, String nombre) {
+        this.nombre = nombre;
         this.vida = vida;
         this.ataque = ataque;
         this.defensa = defensa;
         this.velocidad = velocidad;
-        this.habilidad_especial = habilidad_especial;
+        this.nivel = 1;
+        this.experiencia = 0;
     }
 
     public int getVida() {
@@ -47,8 +54,16 @@ public class Personaje {
         return habilidad_especial;
     }
 
+    public String getNombre() {
+        return nombre;
+    }
+
     public void setVida(int vida) {
         this.vida = vida;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     public void setAtaque(int ataque) {
@@ -68,11 +83,39 @@ public class Personaje {
     }
 
     public void recibirDaño(int cantidad) {
-        vida = vida - cantidad;
+        int dañoFin = Math.max(0, cantidad - defensa);
+        vida -= dañoFin;
+        System.out.println(nombre + " ha recibido " + dañoFin + " de daño. Vida restante: " + vida);
     }
 
     public void atacar(Personaje enemigo) {
-        enemigo.vida = enemigo.vida - ataque;
+        int daño = this.ataque - enemigo.defensa;
+        if (daño < 0) {
+            daño = 0;
+        }
+        enemigo.recibirDaño(daño);
+        System.out.println(enemigo.getNombre() + " ha recibido " + daño + " de daño. Vida restante: " + enemigo.vida);
+    }
+
+    public void subirNivel() {
+        while (experiencia >= 100) {
+            experiencia -= 100;
+            nivel++;
+            vida += 20;
+            ataque += 7;
+            defensa += 5;
+            System.out.println("¡" + nombre + " subió al nivel " + nivel + "!!!!");
+        }
+    }
+
+    public void defender() {
+        this.defensa += 3;  
+    }
+
+    public void ganarExperiencia(int exp) {
+        experiencia = experiencia + exp;
+        System.out.println(nombre + " ganó " + exp + " de experiencia.");
+        subirNivel();
     }
 
     public boolean estaVivo() {

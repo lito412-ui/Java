@@ -10,15 +10,12 @@ package com.mycompany.lastierrasdezaltor;
  */
 class Ninja extends Personaje {
 
-    public int ataqueSigiloso;
-
-    public Ninja(int vida, int ataque, int defensa, int velocidad, String habilidad_especial) {
-        super(vida, ataque, defensa, velocidad, habilidad_especial);
-        ataqueSigiloso = ataque;
+    public Ninja(String nombre) {
+        super(100, 15, 8, 15, nombre);
     }
 
-    public void ataqueSigiloso(Enemigo enemigo) {
-        ataqueSigiloso = ataqueSigiloso + 5;
-        enemigo.vida = enemigo.vida - ataqueSigiloso;
+    public void ataqueSigiloso(Personaje enemigo) {
+        System.out.println(nombre + " usa Ataque Sigiloso!");
+        enemigo.recibirDaño(ataque + 5);
     }
 }
