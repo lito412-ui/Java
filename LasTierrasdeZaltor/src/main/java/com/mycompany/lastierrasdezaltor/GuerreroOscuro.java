@@ -4,6 +4,9 @@
  */
 package com.mycompany.lastierrasdezaltor;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author Alumno
@@ -16,5 +19,15 @@ class GuerreroOscuro extends Enemigo {
     @Override
     public void ataqueEspecial(Personaje jugador) {
         System.out.println(nombre + " usa Furia Maldita!");
-        jugador.recibirDaño(ataque + 5);
-    }}
+        try {
+            jugador.recibirDaño(ataque + 5);
+        } catch (JuegoException ex) {
+            Logger.getLogger(GuerreroOscuro.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    @Override
+    public void ataqueEspecial(Enemigo enemigo) {
+        throw new UnsupportedOperationException("No ataca al enemigo"); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+}

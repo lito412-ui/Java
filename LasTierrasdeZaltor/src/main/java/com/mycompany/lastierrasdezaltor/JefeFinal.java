@@ -8,20 +8,22 @@ package com.mycompany.lastierrasdezaltor;
  *
  * @author LITO
  */
-public class JefeFinal extends Enemigo{
+class JefeFinal extends Enemigo {
 
     public JefeFinal() {
-        super("Malenia, la Espada de Miquella", 320, 28, 17, 13);
-    }
-    public void ataqueEspecial() {
-        System.out.println("Malenia desata su poder oscuro (+10 ataque)");
-        this.ataque += 10;
+        super("Malenia, la Espada de Miquella", 320, 48, 27, 23);
     }
 
     @Override
-    public void ataqueEspecial(Personaje jugador) {
+    public void ataqueEspecial(Personaje jugador) throws JuegoException {
+        System.out.println("Malenia desata su poder oscuro (+20 ataque)");
+        this.ataque += 20;
+        System.out.println("Malenia ataca con su poder oscuro!");
+        jugador.recibirDaño(ataque + 15);
+    }
+
+    @Override
+    public void ataqueEspecial(Enemigo enemigo) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }
-    
-

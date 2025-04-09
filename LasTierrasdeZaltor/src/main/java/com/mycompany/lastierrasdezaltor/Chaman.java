@@ -4,6 +4,9 @@
  */
 package com.mycompany.lastierrasdezaltor;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author Alumno
@@ -14,8 +17,19 @@ class Chaman extends Personaje {
         super(120, 12, 10, 10, nombre);
     }
 
-    public void curar() {
-        System.out.println(nombre + " usa Curación! Recupera 20 de vida.");
-        vida += 20;
+    @Override
+    public void ataqueEspecial(Enemigo enemigo) {
+        try {
+            usarHabilidadEspecial();
+            System.out.println(nombre + " usa Tormenta Arcana!");
+            int dañoEspecial = ataque + 30;
+            enemigo.recibirDaño(dañoEspecial);
+            vida += 15; // El chamán se cura un poco
+            System.out.println(nombre + " recupera 15 puntos de vida.");
+        } catch (EnergiaInsuficienteException e) {
+            System.out.println(e.getMessage());
+        } catch (JuegoException ex) {
+            Logger.getLogger(Chaman.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 }

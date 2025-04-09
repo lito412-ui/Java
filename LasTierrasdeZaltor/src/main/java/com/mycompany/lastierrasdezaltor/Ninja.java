@@ -4,6 +4,9 @@
  */
 package com.mycompany.lastierrasdezaltor;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author Alumno
@@ -14,8 +17,17 @@ class Ninja extends Personaje {
         super(100, 15, 8, 15, nombre);
     }
 
-    public void ataqueSigiloso(Personaje enemigo) {
-        System.out.println(nombre + " usa Ataque Sigiloso!");
-        enemigo.recibirDaño(ataque + 5);
+    @Override
+    public void ataqueEspecial(Enemigo enemigo) {
+        try {
+            usarHabilidadEspecial();
+            System.out.println(nombre + " usa Ataque Sigiloso!");
+            int dañoEspecial = ataque + 40;
+            enemigo.recibirDaño(dañoEspecial);
+        } catch (EnergiaInsuficienteException e) {
+            System.out.println(e.getMessage());
+        } catch (JuegoException ex) {
+            Logger.getLogger(Ninja.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 }

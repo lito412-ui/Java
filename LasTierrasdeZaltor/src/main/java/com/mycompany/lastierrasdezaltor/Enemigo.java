@@ -14,5 +14,5 @@ abstract class Enemigo extends Personaje {
         super(vida, ataque, defensa, velocidad, nombre);
     }
 
-    public abstract void ataqueEspecial(Personaje jugador);
+    public abstract void ataqueEspecial(Personaje jugador) throws JuegoException;
 }

@@ -4,6 +4,9 @@
  */
 package com.mycompany.lastierrasdezaltor;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author Alumno
@@ -14,9 +17,17 @@ class Guerrero extends Personaje {
         super(150, 18, 12, 6, nombre);
 
     }
-
-    public void golpeDevastador(Enemigo enemigo) {
-        System.out.println(nombre + " usa Golpe Devastador!");
-        enemigo.recibirDaño(ataque * 2);
+    @Override
+    public void ataqueEspecial(Enemigo enemigo) {
+        try {
+            usarHabilidadEspecial();
+            System.out.println(nombre + " usa golpe devastador");
+            int dañoEspecial = ataque * 2;
+            enemigo.recibirDaño(dañoEspecial);
+        } catch (EnergiaInsuficienteException e) {
+            System.out.println(e.getMessage());
+        } catch (JuegoException ex) {
+            Logger.getLogger(Guerrero.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 }

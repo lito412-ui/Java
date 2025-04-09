@@ -4,6 +4,9 @@
  */
 package com.mycompany.lastierrasdezaltor;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author Alumno
@@ -15,8 +18,13 @@ class LoboSalvaje extends Enemigo {
     }
 
     @Override
-    public void ataqueEspecial(Personaje jugador) {
+    public void ataqueEspecial(Personaje jugador) throws JuegoException {
         System.out.println(nombre + " usa Mordida Rápida!");
         jugador.recibirDaño(ataque + 2);
+    }
+
+    @Override
+    public void ataqueEspecial(Enemigo enemigo) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }

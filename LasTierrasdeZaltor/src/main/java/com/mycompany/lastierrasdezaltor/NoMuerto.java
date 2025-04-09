@@ -18,4 +18,9 @@ class NoMuerto extends Enemigo {
         System.out.println(nombre + " usa Regeneración y recupera 10 de vida!");
         vida += 10;
     }
+
+    @Override
+    public void ataqueEspecial(Enemigo enemigo) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }

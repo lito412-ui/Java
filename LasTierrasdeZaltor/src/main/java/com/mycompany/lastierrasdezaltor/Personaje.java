@@ -10,7 +10,7 @@ import java.util.Random;
  *
  * @author Alumno
  */
-public class Personaje {
+public abstract class Personaje {
 
     public String nombre;
     public int vida;
@@ -20,6 +20,7 @@ public class Personaje {
     public String habilidad_especial;
     public int nivel;
     public int experiencia;
+    public int energia;
 
     /*
     Constructor
@@ -32,6 +33,7 @@ public class Personaje {
         this.velocidad = velocidad;
         this.nivel = 1;
         this.experiencia = 0;
+        this.energia = 60;
     }
 
     public int getVida() {
@@ -82,13 +84,15 @@ public class Personaje {
         this.habilidad_especial = habilidad_especial;
     }
 
-    public void recibirDaño(int cantidad) {
-        int dañoFin = Math.max(0, cantidad - defensa);
-        vida -= dañoFin;
-        System.out.println(nombre + " ha recibido " + dañoFin + " de daño. Vida restante: " + vida);
+    public void recibirDaño(int cantidad) throws JuegoException {
+        vida -= cantidad; // El daño se aplica directamente sin restar la defensa
+        System.out.println(nombre + " ha recibido " + cantidad + " de daño. Vida restante: " + vida);
+        if (vida <= 0) {
+            throw new JuegoException(nombre + " ha sido derrotado.");
+        }
     }
 
-    public void atacar(Personaje enemigo) {
+    public void atacar(Personaje enemigo) throws JuegoException {
         int daño = this.ataque - enemigo.defensa;
         if (daño < 0) {
             daño = 0;
@@ -105,11 +109,12 @@ public class Personaje {
             ataque += 7;
             defensa += 5;
             System.out.println("¡" + nombre + " subió al nivel " + nivel + "!!!!");
+            Logger.registrarLog(nombre + " sube de nivel");
         }
     }
 
     public void defender() {
-        this.defensa += 3;  
+        System.out.println(nombre + " se defiende y reduce el daño en " + defensa + " puntos.");
     }
 
     public void ganarExperiencia(int exp) {
@@ -127,5 +132,12 @@ public class Personaje {
         }
         return vivo;
     }
-
+    public void usarHabilidadEspecial() throws EnergiaInsuficienteException {
+        if (energia < 20) {
+            throw new EnergiaInsuficienteException(nombre + " no tiene suficiente energía para usar su habilidad especial.");
+        }
+        energia -= 20;
+        System.out.println(nombre + " usa una habilidad especial.");
+    }
+    public abstract void ataqueEspecial(Enemigo enemigo);
 }
