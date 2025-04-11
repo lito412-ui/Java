@@ -88,7 +88,8 @@ public abstract class Personaje {
         vida -= cantidad; // El daño se aplica directamente sin restar la defensa
         System.out.println(nombre + " ha recibido " + cantidad + " de daño. Vida restante: " + vida);
         if (vida <= 0) {
-            throw new JuegoException(nombre + " ha sido derrotado.");
+            vida = 0;
+            System.out.println(nombre + " ha sido derrotado.");
         }
     }
 
@@ -109,6 +110,7 @@ public abstract class Personaje {
             ataque += 7;
             defensa += 5;
             System.out.println("¡" + nombre + " subió al nivel " + nivel + "!!!!");
+            Logger.registrarLog(nombre + " sube de nivel");
         }
     }
 
@@ -131,6 +133,7 @@ public abstract class Personaje {
         }
         return vivo;
     }
+
     public void usarHabilidadEspecial() throws EnergiaInsuficienteException {
         if (energia < 20) {
             throw new EnergiaInsuficienteException(nombre + " no tiene suficiente energía para usar su habilidad especial.");
@@ -138,5 +141,6 @@ public abstract class Personaje {
         energia -= 20;
         System.out.println(nombre + " usa una habilidad especial.");
     }
+
     public abstract void ataqueEspecial(Enemigo enemigo);
 }

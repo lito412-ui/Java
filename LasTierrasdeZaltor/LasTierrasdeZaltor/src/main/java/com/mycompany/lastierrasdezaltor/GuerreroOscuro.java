@@ -28,6 +28,6 @@ class GuerreroOscuro extends Enemigo {
 
     @Override
     public void ataqueEspecial(Enemigo enemigo) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        throw new UnsupportedOperationException("No ataca al enemigo"); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }
