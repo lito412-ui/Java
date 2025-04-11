@@ -5,12 +5,16 @@ com\mycompany\lastierrasdezaltor\Mundo.class
 com\mycompany\lastierrasdezaltor\Guerrero.class
 com\mycompany\lastierrasdezaltor\ZonaBloqueadaException.class
 com\mycompany\lastierrasdezaltor\GuerreroOscuro.class
+Ventana_Principal$1.class
 com\mycompany\lastierrasdezaltor\NoMuerto.class
+Ventana_Principal.class
 com\mycompany\lastierrasdezaltor\LasTierrasdeZaltor.class
+Ventana_Principal$2.class
 com\mycompany\lastierrasdezaltor\Ninja.class
 com\mycompany\lastierrasdezaltor\JefeFinal.class
 com\mycompany\lastierrasdezaltor\Personaje.class
 com\mycompany\lastierrasdezaltor\Logger.class
 com\mycompany\lastierrasdezaltor\EnergiaInsuficienteException.class
 com\mycompany\lastierrasdezaltor\Enemigo.class
+Ventana_Principal$3.class
 com\mycompany\lastierrasdezaltor\JuegoException.class

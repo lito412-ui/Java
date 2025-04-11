@@ -185,3 +185,89 @@ Mon Apr 07 10:49:41 CEST 2025 - Guerrero Oscuro ataca a lito
 Mon Apr 07 10:49:41 CEST 2025 - lito ha recibido 20 de daño
 Mon Apr 07 10:49:42 CEST 2025 - lito ataca a Guerrero Oscuro
 Mon Apr 07 10:49:42 CEST 2025 - Guerrero Oscuro ha recibido 15 de daño
+Thu Apr 10 10:25:26 CEST 2025 - Inicia el Programa
+Thu Apr 10 10:25:26 CEST 2025 - Elige Personaje
+Thu Apr 10 10:25:33 CEST 2025 - Se introduce un nombre, Introducido lito
+Thu Apr 10 10:25:33 CEST 2025 - lito ha elegido un ninja
+Thu Apr 10 10:25:33 CEST 2025 - lito ha elegido un personaje
+Thu Apr 10 10:25:34 CEST 2025 - lito elige explorar o avanzar
+Thu Apr 10 10:25:34 CEST 2025 - Enemigo aleatorio generado correctamente
+Thu Apr 10 10:25:34 CEST 2025 - lito ha iniciado un combate contra Lobo Salvaje
+Thu Apr 10 10:25:36 CEST 2025 - lito ha usado su ataque especial
+Thu Apr 10 10:25:36 CEST 2025 - Lobo Salvaje ataca a lito
+Thu Apr 10 10:25:36 CEST 2025 - lito ha recibido 12 de daño
+Thu Apr 10 10:25:37 CEST 2025 - lito ha usado su ataque especial
+Thu Apr 10 10:25:37 CEST 2025 - litoha derrotado a Lobo Salvaje
+Thu Apr 10 10:25:37 CEST 2025 - lito ha recibido 50 de experiencia
+Thu Apr 10 10:25:42 CEST 2025 - lito elige explorar o avanzar
+Thu Apr 10 10:25:42 CEST 2025 - Enemigo aleatorio generado correctamente
+Thu Apr 10 10:25:42 CEST 2025 - lito ha iniciado un combate contra Lobo Salvaje
+Thu Apr 10 10:25:43 CEST 2025 - lito ha usado su ataque especial
+Thu Apr 10 10:25:43 CEST 2025 - Lobo Salvaje ataca a lito
+Thu Apr 10 10:25:43 CEST 2025 - lito ha recibido 12 de daño
+Thu Apr 10 10:25:47 CEST 2025 - lito ataca a Lobo Salvaje
+Thu Apr 10 10:25:47 CEST 2025 - Lobo Salvaje ha recibido 15 de daño
+Thu Apr 10 10:25:47 CEST 2025 - Lobo Salvaje se ha defendido de los ataques de lito
+Thu Apr 10 10:25:48 CEST 2025 - lito ataca a Lobo Salvaje
+Thu Apr 10 10:25:48 CEST 2025 - Lobo Salvaje ha recibido 15 de daño
+Thu Apr 10 10:25:48 CEST 2025 - litoha derrotado a Lobo Salvaje
+Thu Apr 10 10:25:48 CEST 2025 - lito ha recibido 50 de experiencia
+Thu Apr 10 10:25:48 CEST 2025 - lito sube de nivel
+Thu Apr 10 10:25:55 CEST 2025 - lito elige explorar o avanzar
+Thu Apr 10 10:25:55 CEST 2025 - lito ha elegido explorar
+Thu Apr 10 10:26:00 CEST 2025 - Enemigo aleatorio generado correctamente
+Thu Apr 10 10:26:00 CEST 2025 - lito ha iniciado un combate contra Guerrero Oscuro
+Thu Apr 10 10:26:03 CEST 2025 - lito ha usado su ataque especial
+Thu Apr 10 10:26:03 CEST 2025 - Guerrero Oscuro ataca a lito
+Thu Apr 10 10:26:03 CEST 2025 - lito ha recibido 20 de daño
+Thu Apr 10 10:26:04 CEST 2025 - lito ataca a Guerrero Oscuro
+Thu Apr 10 10:26:04 CEST 2025 - Guerrero Oscuro ha recibido 22 de daño
+Thu Apr 10 10:26:04 CEST 2025 - Guerrero Oscuro se ha defendido de los ataques de lito
+Thu Apr 10 10:26:05 CEST 2025 - lito ataca a Guerrero Oscuro
+Thu Apr 10 10:26:05 CEST 2025 - Guerrero Oscuro ha recibido 22 de daño
+Thu Apr 10 10:26:05 CEST 2025 - Guerrero Oscuro se ha defendido de los ataques de lito
+Thu Apr 10 10:26:06 CEST 2025 - lito ataca a Guerrero Oscuro
+Thu Apr 10 10:26:06 CEST 2025 - Guerrero Oscuro ha recibido 22 de daño
+Thu Apr 10 10:26:06 CEST 2025 - Guerrero Oscuro se ha defendido de los ataques de lito
+Thu Apr 10 10:26:06 CEST 2025 - lito ataca a Guerrero Oscuro
+Thu Apr 10 10:26:06 CEST 2025 - Guerrero Oscuro ha recibido 22 de daño
+Thu Apr 10 10:26:06 CEST 2025 - Guerrero Oscuro ataca a lito
+Thu Apr 10 10:26:06 CEST 2025 - lito ha recibido 20 de daño
+Thu Apr 10 10:26:07 CEST 2025 - lito ataca a Guerrero Oscuro
+Thu Apr 10 10:26:07 CEST 2025 - Guerrero Oscuro ha recibido 22 de daño
+Thu Apr 10 10:26:07 CEST 2025 - Guerrero Oscuro ataca a lito
+Thu Apr 10 10:26:07 CEST 2025 - lito ha recibido 20 de daño
+Thu Apr 10 10:26:08 CEST 2025 - lito ataca a Guerrero Oscuro
+Thu Apr 10 10:26:08 CEST 2025 - Guerrero Oscuro ha recibido 22 de daño
+Thu Apr 10 10:26:08 CEST 2025 - Guerrero Oscuro se ha defendido de los ataques de lito
+Thu Apr 10 10:26:09 CEST 2025 - lito ataca a Guerrero Oscuro
+Thu Apr 10 10:26:09 CEST 2025 - Guerrero Oscuro ha recibido 22 de daño
+Thu Apr 10 10:26:09 CEST 2025 - Guerrero Oscuro se ha defendido de los ataques de lito
+Thu Apr 10 10:26:10 CEST 2025 - lito ataca a Guerrero Oscuro
+Thu Apr 10 10:26:10 CEST 2025 - Guerrero Oscuro ha recibido 22 de daño
+Thu Apr 10 10:26:10 CEST 2025 - Guerrero Oscuro ataca a lito
+Thu Apr 10 10:26:10 CEST 2025 - lito ha recibido 20 de daño
+Thu Apr 10 10:26:10 CEST 2025 - lito ataca a Guerrero Oscuro
+Thu Apr 10 10:26:10 CEST 2025 - Guerrero Oscuro ha recibido 22 de daño
+Thu Apr 10 10:26:10 CEST 2025 - litoha derrotado a Guerrero Oscuro
+Thu Apr 10 10:26:10 CEST 2025 - lito ha recibido 50 de experiencia
+Thu Apr 10 10:26:12 CEST 2025 - lito elige explorar o avanzar
+Thu Apr 10 10:26:12 CEST 2025 - lito ha elegido explorar
+Thu Apr 10 10:26:16 CEST 2025 - Enemigo aleatorio generado correctamente
+Thu Apr 10 10:26:16 CEST 2025 - lito ha iniciado un combate contra Lobo Salvaje
+Thu Apr 10 10:26:18 CEST 2025 - lito ataca a Lobo Salvaje
+Thu Apr 10 10:26:18 CEST 2025 - Lobo Salvaje ha recibido 22 de daño
+Thu Apr 10 10:26:18 CEST 2025 - Lobo Salvaje ataca a lito
+Thu Apr 10 10:26:18 CEST 2025 - lito ha recibido 12 de daño
+Thu Apr 10 10:26:19 CEST 2025 - lito se defiende
+Thu Apr 10 10:26:19 CEST 2025 - Lobo Salvaje ataca a lito
+Thu Apr 10 10:26:19 CEST 2025 - lito ha recibido 12 de daño
+Thu Apr 10 10:26:20 CEST 2025 - lito ataca a Lobo Salvaje
+Thu Apr 10 10:26:20 CEST 2025 - Lobo Salvaje ha recibido 22 de daño
+Thu Apr 10 10:26:20 CEST 2025 - Lobo Salvaje se ha defendido de los ataques de lito
+Thu Apr 10 10:26:20 CEST 2025 - lito ataca a Lobo Salvaje
+Thu Apr 10 10:26:20 CEST 2025 - Lobo Salvaje ha recibido 22 de daño
+Thu Apr 10 10:26:20 CEST 2025 - Lobo Salvaje ataca a lito
+Thu Apr 10 10:26:20 CEST 2025 - lito ha recibido 12 de daño
+Thu Apr 10 10:26:20 CEST 2025 - lito ha sido derrotado por Lobo Salvaje
+Thu Apr 10 10:26:20 CEST 2025 - lito ha sido derrotado, fin del juego
