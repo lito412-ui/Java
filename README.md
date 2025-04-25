@@ -1,6 +1,6 @@
 # Java Projects for Learning
 
-![Java Logo](https://upload.wikimedia.org/wikipedia/en/3/30/Java_logo_and_wordmark.svg)
+![Java Logo](https://imgs.search.brave.com/ET0S7tvlvtwcQz_q6MV7V79QBhgihBgx6YxvezMiCQg/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly8xMDAw/bWFyY2FzLm5ldC93/cC1jb250ZW50L3Vw/bG9hZHMvMjAyMC8x/MS9KYXZhLUxvZ28t/MTk5Ni02MDB4NDI5/LmpwZw)
 
 ## Descripción
 
@@ -23,4 +23,4 @@ Para ejecutar los proyectos, asegúrate de tener instalado el JDK y un compilado
 
 1. Clona el repositorio:
    ```bash
-   git clone https://github.com/lito412-ui/java-projects.git
+   git clone https://github.com/lito412-ui/Java/tree/main.git
