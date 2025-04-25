@@ -23,4 +23,4 @@ Para ejecutar los proyectos, asegúrate de tener instalado el JDK y un compilado
 
 1. Clona el repositorio:
    ```bash
-   git clone https://github.com/tu_usuario/java-projects.git
+   git clone https://github.com/lito412-ui/java-projects.git
