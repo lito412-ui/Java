@@ -11,7 +11,7 @@ import java.util.logging.Logger;
  *
  * @author Alumno
  */
-class Chaman extends Personaje {
+public class Chaman extends Personaje {
 
     public Chaman(String nombre) {
         super(120, 12, 10, 10, nombre);

@@ -10,4 +10,11 @@
         <maven.compiler.release>23</maven.compiler.release>
         <exec.mainClass>com.mycompany.lastierrasdezaltor.LasTierrasdeZaltor</exec.mainClass>
     </properties>
+    <dependencies>
+        <dependency>
+        <groupId>mysql</groupId>
+        <artifactId>mysql-connector-java</artifactId>
+        <version>8.0.26</version>
+        </dependency>
+    </dependencies>
 </project>

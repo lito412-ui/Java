@@ -11,7 +11,7 @@ import java.util.logging.Logger;
  *
  * @author Alumno
  */
-class Guerrero extends Personaje {
+public class Guerrero extends Personaje {
 
     public Guerrero(String nombre) {
         super(150, 18, 12, 6, nombre);
