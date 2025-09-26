@@ -2,25 +2,25 @@
 
 ![Java Logo](https://imgs.search.brave.com/ET0S7tvlvtwcQz_q6MV7V79QBhgihBgx6YxvezMiCQg/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly8xMDAw/bWFyY2FzLm5ldC93/cC1jb250ZW50L3Vw/bG9hZHMvMjAyMC8x/MS9KYXZhLUxvZ28t/MTk5Ni02MDB4NDI5/LmpwZw)
 
-## Descripción
+## Description
 
-Este repositorio está diseñado para enseñar conceptos de programación en Java a través de pequeños proyectos. Cada proyecto está pensado para ser una herramienta educativa que ayude a los principiantes a familiarizarse con la sintaxis y las características del lenguaje Java.
+This repository is designed to teach Java programming concepts through small projects. Each project is intended as an educational tool to help beginners become familiar with Java syntax and language features.
 
-## Características
+## Characteristics
 
-- **Proyectos Diversos**: Incluye una variedad de proyectos que cubren diferentes aspectos de Java, desde la programación orientada a objetos hasta la manipulación de datos.
-- **Ejemplos Prácticos**: Cada proyecto viene con ejemplos prácticos que facilitan la comprensión de los conceptos.
-- **Documentación**: Cada proyecto incluye documentación que explica su funcionamiento y cómo se puede utilizar.
+- **Miscellaneous Projects**: Includes a variety of projects covering different aspects of Java, from object-oriented programming to data manipulation.
+- **Practical Examples**: Each project comes with practical examples to help you understand the concepts.
+- **Documentation**: Each project includes documentation that explains how it works and how to use it.
 
-## Tecnologías Utilizadas
+## Technologies Used
 
-- **Lenguaje**: Java
-- **Entorno de Desarrollo**: NetBeans (o cualquier otro compilador compatible con JDK)
+- **Language**: Java
+- **Development Environment**: NetBeans (or any other JDK-compatible compiler)
 
-## Instalación
+## Installation
 
-Para ejecutar los proyectos, asegúrate de tener instalado el JDK y un compilador como NetBeans. Sigue estos pasos:
+To run the projects, make sure you have the JDK and a compiler like NetBeans installed. Follow these steps:
 
-1. Clona el repositorio:
+1. Cone the repository:
    ```bash
    git clone https://github.com/lito412-ui/Java/tree/main.git
