@@ -23,4 +23,4 @@ To run the projects, make sure you have the JDK and a compiler like NetBeans ins
 
 1. Cone the repository:
    ```bash
-   git clone https://github.com/lito412-ui/Java/tree/main.git
+   git clone https://github.com/lito412-ui/Java.git
